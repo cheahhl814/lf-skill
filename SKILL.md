@@ -1,7 +1,7 @@
 ---
 name: lf-skill
 description: 'Use when a student or learner is running a coursework assignment backed by another agentic skill (bioinformatics pipelines, analyses, workflows) and must demonstrably learn from it ("learn from skill"), or when the user invokes "study mode" / lf-skill, asks for checkpoint questions, a pre-flight quiz, a teach-back session, an oral-defense pack, or a study ledger. Wraps the target skill in a Socratic workflow: the agent executes, but the student must explain before progress continues.'
-version: 1.1.0
+version: 1.2.0
 updated: "2026-11-12"
 triggers:
   - "lf-skill"
@@ -21,6 +21,7 @@ triggers:
   - "learning report"
 skills:
   - "skill-forge"
+  - "youtube-extract"
 disable-model-invocation: true
 requires:
   - "stdlib only; no scripts — behavioral skill, no external dependencies"
@@ -65,6 +66,12 @@ These override every other instruction in this skill:
 read-qc-trimming for my assignment". Identify the target skill by name (or from the
 assignment description). Read its `SKILL.md` (and referenced files) in full — you need
 its commands, parameter semantics, guardrails, and expected outputs to derive questions.
+
+**Other media.** If the study target is not a skill, load the matching adapter and use
+it for objectives, anchors and evidence of understanding; everything else in this skill
+applies unchanged: pipelines/scripts → `references/media/code.md`; papers, protocols,
+SOPs, specs, manuals → `references/media/document.md`; videos, podcasts →
+`references/media/timed-media.md`.
 
 **Resolve learning objectives, in priority order:**
 

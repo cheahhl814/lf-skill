@@ -1,6 +1,6 @@
 # lf-skill
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](#-installation)
+[![Version](https://img.shields.io/badge/version-1.2.0-blue)](#-installation)
 [![Type](https://img.shields.io/badge/type-agent%20skill-blueviolet)](#-installation)
 [![Built with](https://img.shields.io/badge/built%20with-skill--forge-orange)](https://github.com/cheahhl814/skill-forge)
 
@@ -13,8 +13,8 @@ emits graded evidence (ledger, quiz, defense pack, learning report).
 **Repository**: https://github.com/cheahhl814/lf-skill
 
 > [!NOTE]
-> Current version: **v1.1.0** (updated 2026-11-12). v1.1.0 makes the skill user-invoked
-> only (`disable-model-invocation: true`) and ships `bin/skill-update-check.py`.
+> Current version: **v1.2.0** (updated 2026-11-12). v1.2.0 adds per-medium adapters so the
+> same Socratic loop works on pipelines/scripts, documents and timed media, not just skills.
 
 ## Contents
 
@@ -109,6 +109,10 @@ lf-skill/
 │   └── skill-update-check.py       # Self-update check (stdlib-only)
 └── references/
     ├── ledger-format.md            # Ledger schema + provenance tag glossary
+    ├── media/
+    │   ├── code.md                 # Adapter: Nextflow, Snakemake, shell scripts
+    │   ├── document.md             # Adapter: papers, protocols, SOPs, specs, manuals
+    │   └── timed-media.md          # Adapter: videos, podcasts (timestamped transcript)
     └── objectives-contract.md      # Instructor annotation formats + derivation fallback
 ```
 
@@ -133,10 +137,12 @@ validated by `skill-lint.py` C12; runtime prerequisites live in the separate
 - **skill-forge** — the structural contract lf-skill ships under: frontmatter
   conventions, `bin/skill-lint.py` gate, and the `bin/skill-update-check.py` script
   rendered from its template.
+- **youtube-extract** — external intake skill for the video medium: produces the
+  timestamped transcript that `references/media/timed-media.md` requires.
 
 At runtime it composes with whichever agentic skill the assignment uses (it reads that
 skill's `SKILL.md` and optional `teaching/objectives.md`); no sibling skill is a hard
-runtime dependency.
+runtime dependency beyond `youtube-extract` when studying video.
 
 ## Provenance
 
