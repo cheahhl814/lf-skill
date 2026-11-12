@@ -1,7 +1,7 @@
 ---
 name: lf-skill
 description: 'Use when a student or learner is running a coursework assignment backed by another agentic skill (bioinformatics pipelines, analyses, workflows) and must demonstrably learn from it ("learn from skill"), or when the user invokes "study mode" / lf-skill, asks for checkpoint questions, a pre-flight quiz, a teach-back session, an oral-defense pack, or a study ledger. Wraps the target skill in a Socratic workflow: the agent executes, but the student must explain before progress continues.'
-version: 1.0.0
+version: 1.1.0
 updated: "2026-11-12"
 triggers:
   - "lf-skill"
@@ -21,6 +21,7 @@ triggers:
   - "learning report"
 skills:
   - "skill-forge"
+disable-model-invocation: true
 requires:
   - "stdlib only; no scripts — behavioral skill, no external dependencies"
 ---

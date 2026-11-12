@@ -35,8 +35,11 @@ graders: ledger verbatim spot-checks + defense-pack oral questions.
 
 ## For students
 
+`lf-skill` is user-invoked only (`disable-model-invocation: true`) — it never auto-fires
+inside your session; you opt in deliberately:
+
 ```
-study mode with read-qc-trimming for assignment 3
+/skill:lf-skill read-qc-trimming for assignment 3
 ```
 
 Escape when in a hurry: "study off" — finishes normally, ledger records the flag.
@@ -70,7 +73,18 @@ SKILL.md files). Lints under the AiX-BIO `tool-skill` profile.
 SKILL.md                             main workflow (Phases 0–3, integrity rules)
 references/ledger-format.md          ledger schema + provenance tag glossary
 references/objectives-contract.md    instructor annotation formats
+bin/skill-update-check.py            self-update check (git-SHA diff vs upstream; stdlib-only)
 ```
+
+## Stay up-to-date
+
+```bash
+python3 bin/skill-update-check.py
+```
+
+Verdicts: `UP-TO-DATE` / `LOCAL-AHEAD` (no action) · `BEHIND-BY-N` (sync from
+`@skills/lf-skill/` per the one-way deploy convention) · `OFFLINE` / `NO-ORIGIN`
+(informational). Stdlib-only; no GitHub API call, no extra dependencies.
 
 ## Design notes (pedagogy)
 
