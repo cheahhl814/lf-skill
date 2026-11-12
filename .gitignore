@@ -29,3 +29,6 @@ preflight.md
 preflight_evidence.txt
 tool_search_results.txt
 tool-inventory.json
+# Session handoff documents (per-run, workspace-local — never ship)
+handoff.md
+handoff-archive.md
