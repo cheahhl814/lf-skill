@@ -1,9 +1,12 @@
 ---
-name: study-mode
-description: 'Use when a student or learner is running a coursework assignment backed by another agentic skill (bioinformatics pipelines, analyses, workflows) and must demonstrably learn from it, or when the user invokes "study mode", asks for checkpoint questions, a pre-flight quiz, a teach-back session, an oral-defense pack, or a study ledger. Wraps the target skill in a Socratic workflow: the agent executes, but the student must explain before progress continues.'
+name: lf-skill
+description: 'Use when a student or learner is running a coursework assignment backed by another agentic skill (bioinformatics pipelines, analyses, workflows) and must demonstrably learn from it ("learn from skill"), or when the user invokes "study mode" / lf-skill, asks for checkpoint questions, a pre-flight quiz, a teach-back session, an oral-defense pack, or a study ledger. Wraps the target skill in a Socratic workflow: the agent executes, but the student must explain before progress continues.'
 version: 1.0.0
 updated: "2026-11-12"
 triggers:
+  - "lf-skill"
+  - "learn from skill"
+  - "learn from this skill"
   - "study mode"
   - "learning mode"
   - "socratic mode"
@@ -22,11 +25,11 @@ requires:
   - "stdlib only; no scripts — behavioral skill, no external dependencies"
 ---
 
-# study-mode — Socratic study companion for agentic skills
+# lf-skill — Socratic study companion for agentic skills
 
 **Problem this solves:** when an agentic skill completes an assignment end-to-end, the
 agent absorbs all the friction the student was supposed to absorb — and can submit a
-correct result without learning anything. study-mode changes the interaction contract:
+correct result without learning anything. lf-skill changes the interaction contract:
 **the agent still executes the target skill, but progress is gated on the student
 demonstrating understanding**, and every session emits graded, instructor-visible
 evidence of learning.

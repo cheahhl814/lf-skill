@@ -1,0 +1,14 @@
+# Python artifacts (skill is behavioral/stdlib-only, but keep the tree clean)
+__pycache__/
+*.pyc
+
+# Optional local work dirs and run artifacts (per-run, regenerable — never ship)
+work/
+preflight.md
+skill-built.md
+battle-test-report.md
+*_evidence.txt
+debug-report.md
+
+# docs-corpus fingerprints if a corpus is ever vendored in
+docs-corpus/.fingerprints/

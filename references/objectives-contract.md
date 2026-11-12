@@ -1,6 +1,6 @@
 # Instructor contract: annotating shared skills with learning objectives
 
-study-mode is generic by design. To get domain-precise questions, an instructor who
+lf-skill is generic by design. To get domain-precise questions, an instructor who
 maintains a shared agentic skill (read-qc-trimming, bacterial-genome-analysis, …) can
 optionally ship a teaching block with the skill. This file is the format contract.
 

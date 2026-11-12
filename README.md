@@ -1,4 +1,4 @@
-# study-mode
+# lf-skill
 
 **Socratic study companion for agentic skills.** Wrap any shared agentic skill in a
 learning gate so students producing coursework with coding agents demonstrably learn
@@ -13,7 +13,7 @@ human learner needs is exactly the friction the agent removes.
 
 ## How it works
 
-study-mode does **not** replace the target skill. The agent still runs the real
+lf-skill does **not** replace the target skill. The agent still runs the real
 pipeline and produces the real assignment artifacts. But progress is gated:
 
 1. **Pre-flight quiz** — 5–8 must-know basics (file formats, core flags). Threshold
@@ -58,7 +58,7 @@ too — objectives are derived from the skill's own docs.
 Clone into your harness's skills directory (Pi reads `~/.agents/skills/`):
 
 ```bash
-git clone https://github.com/cheahhl814/study-mode ~/.agents/skills/study-mode
+git clone https://github.com/cheahhl814/lf-skill ~/.agents/skills/lf-skill
 ```
 
 No external dependencies; harness-agnostic (Pi, Claude Code, or any agent that reads
