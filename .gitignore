@@ -1,14 +1,31 @@
-# Python artifacts (skill is behavioral/stdlib-only, but keep the tree clean)
+# Python artifacts
 __pycache__/
 *.pyc
+*.egg-info/
 
-# Optional local work dirs and run artifacts (per-run, regenerable — never ship)
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Pixi env cache + lockfile (resolved on first run, regenerated per machine)
+/.pixi/
+pixi.lock
+
+# Per-run working outputs — must not be committed
 work/
-preflight.md
+results/
+
+# Docs-corpus fetch cache (regenerable via skill-update-check)
+docs-corpus/.fingerprints
+
+# Meta-skill run artifacts (per-run, regenerable by re-running skill-forge)
+# — NOT part of the skill's operational deliverable; never commit them to GitHub.
+# params.json IS tracked (it is the render input that makes a re-run reproducible).
 skill-built.md
 battle-test-report.md
-*_evidence.txt
-debug-report.md
-
-# docs-corpus fingerprints if a corpus is ever vendored in
-docs-corpus/.fingerprints/
+battle-test_evidence.txt
+preflight.md
+preflight_evidence.txt
+tool_search_results.txt
+tool-inventory.json
