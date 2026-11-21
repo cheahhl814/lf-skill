@@ -51,6 +51,30 @@ Tag semantics:
 | `[escape]` | Study gate bypassed by student request | instructor flag |
 | `[config]` | Instructor/config override applied | — |
 
+## Source citations per medium
+
+Every **Trigger:** line (or quiz/defense item) must cite the anchor the question
+derives from, so an instructor can find it without the transcript of the session.
+For a skill target this is a command or output excerpt from this run. For non-skill
+media (loaded via the Phase 0 adapters), use the medium's citation format:
+
+| Medium | Citation format | Example |
+|---|---|---|
+| agentic skill | command or output excerpt from this run | `trimmomatic PE SRR1234567…` |
+| pipeline / script | process/rule name or `file:line`, plus the snippet | `process TRIMMOMATIC (main.nf:14): "trimmomatic PE …"` |
+| document | section/page/table/figure + verbatim quoted passage (books: chapter-qualified, e.g. `ch. 3, §2, p.87`) | `§4.2, p.12 — "we used k = 31"` |
+| timed media | timestamp `[mm:ss]` (`[hh:mm:ss]` beyond one hour) + verbatim transcript quote | `[12:40] — "the min length is 500"` |
+
+Rules:
+
+- Quotes are verbatim from the source material — same standard as
+  `[student-verbatim]`, applied to the anchor.
+- The citation alone must locate the anchor: a file and line, a section number, or a
+  timestamp; "the part about trimming" is not a citation.
+- Timestamps are cited as they appear in the transcript used at intake; if intake
+  produced no timestamped transcript, the timed-media adapter requires one before
+  questions start — the ledger never carries uncited moments.
+
 ## Finalization block (Phase 3, appended at top as a summary, not interleaved)
 
 ```markdown

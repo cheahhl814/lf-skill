@@ -28,6 +28,12 @@ good-to-know.
 - Section boundaries (one checkpoint per major section, ≤ 6 per session).
 - Before moving past a table, figure or procedure step with a real number in it.
 
+**Long-form (books):** the defaults above are sized for papers and SOPs. For a book,
+treat each chapter as its own study unit — one session per chapter unless
+`study-config.md` says otherwise, anchors at chapter-section boundaries, and citations
+as `ch. §page` (e.g. `ch. 3, §2, p.87`). The ≤ 6/session cap applies within a
+chapter, not across the book; never carry checkpoint debt across chapters.
+
 ## Evidence of understanding
 
 - **Justify:** "why this threshold / control / step?" anchored to the passage.

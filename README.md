@@ -4,11 +4,13 @@
 [![Type](https://img.shields.io/badge/type-agent%20skill-blueviolet)](#-installation)
 [![Built with](https://img.shields.io/badge/built%20with-skill--forge-orange)](https://github.com/cheahhl814/skill-forge)
 
-Socratic study companion for agentic skills: it wraps any shared agentic skill the way
-a student uses it for coursework — pre-flight basics quiz, mid-run Socratic checkpoints
-(a defensible student parameter pick gets used), and a teach-back debrief — so that the
-agent executes the pipeline while the student demonstrably learns, and every session
-emits graded evidence (ledger, quiz, defense pack, learning report).
+Socratic study companion: it wraps the study target — an agentic skill, a
+pipeline/script, a document (paper, SOP, spec, manual) or timed media (video,
+podcast) — the way a student uses it for coursework — pre-flight basics quiz, mid-run
+Socratic checkpoints (a defensible student parameter pick gets used), and a teach-back
+debrief — so that the agent executes the pipeline while the student demonstrably
+learns, and every session emits graded evidence (ledger, quiz, defense pack,
+learning report).
 
 **Repository**: https://github.com/cheahhl814/lf-skill
 
@@ -38,7 +40,7 @@ No `pixi install` step.
 Install the lf-skill skill from
 https://github.com/cheahhl814/lf-skill —
 clone it into your agent's skills directory. Then read lf-skill's SKILL.md
-to understand its three phases and the ledger/artifact contract. Confirm
+to understand its phases and the ledger/artifact contract. Confirm
 when it is ready.
 ```
 
@@ -63,22 +65,26 @@ the gate is the assignment.
 lf-skill: wrap my assembly assignment, quiz me on the basics first
 learn from skill: teach-back after this metagenomics run
 give me an oral-defense pack for what the agent just ran
+lf-skill: quiz me on this paper before we implement its pipeline
+lf-skill: study mode for the RNA-seq lecture video
 ```
 
-### The three phases (driven by the agent)
+### Phases 0–3 (driven by the agent)
 
-1. **Phase 0 — Objectives.** The agent reads the target skill's `SKILL.md` and its
+1. **Phase 0 — Objectives.** The agent reads the target's `SKILL.md` (for a skill) or
+   loads the matching medium adapter (for code, documents or timed media) and the
    optional `teaching/objectives.md` (instructor-annotated; else it derives
-   must-know/good-to-know objectives from the skill docs).
-2. **Phase 1–2 — Pre-flight quiz + Socratic run.** ≥ 70% of must-know basics before
-   analysis starts; checkpoints at stage boundaries, consequential commands, and real
-   parameter choices. Escape: "study off" — flagged, never argued with.
-3. **Phase 3 — Teach-back + artifacts** into `study/`: `study-ledger.md`
+   must-know/good-to-know objectives from the target docs).
+2. **Phase 1 — Pre-flight quiz.** ≥ 70% of must-know basics before analysis starts.
+3. **Phase 2 — Socratic run.** Checkpoints at stage boundaries, consequential commands,
+   and real parameter choices. Escape: "study off" — flagged, never argued with.
+4. **Phase 3 — Teach-back + artifacts** into `study/`: `study-ledger.md`
    (verbatim, provenance-tagged), `quiz.md` (built from THIS run),
    `defense-pack.md` (viva questions tied to run events), `report.html`.
 
 Instructor per-assignment overrides (checkpoint density, thresholds, artifact set) go
-in a `study-config.md`; full annotation formats are in
+in a `study-config.md`; precedence is `teaching/objectives.md` > `study-config.md` >
+derivation fallback, and full annotation formats are in
 `references/objectives-contract.md`.
 
 ## 🔄 Update check

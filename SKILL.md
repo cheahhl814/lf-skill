@@ -1,8 +1,8 @@
 ---
 name: lf-skill
-description: 'Wraps a target agentic skill (e.g., bioinformatics pipelines) in a Socratic workflow. The agent executes, but the student must demonstrate understanding via checkpoints, quizzes, and teach-backs before progress continues.'
+description: 'Use when a student should learn rather than just run: wraps a target agentic skill (e.g., bioinformatics pipelines) in a Socratic workflow. The agent executes, but the student must demonstrate understanding via checkpoints, quizzes, and teach-backs before progress continues.'
 version: 1.2.0
-updated: "2026-11-12"
+updated: "2026-11-21"
 triggers:
   - "lf-skill"
   - "learn from skill"
