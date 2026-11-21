@@ -1,7 +1,7 @@
 ---
 name: lf-skill
 description: 'Use when a student should learn rather than just run: wraps a target agentic skill (e.g., bioinformatics pipelines) in a Socratic workflow. The agent executes, but the student must demonstrate understanding via checkpoints, quizzes, and teach-backs before progress continues.'
-version: 1.2.0
+version: 1.3.0
 updated: "2026-11-21"
 triggers:
   - "lf-skill"
@@ -61,6 +61,8 @@ When an agentic skill completes an assignment end-to-end, the agent absorbs the 
 
 **Tier:** `must-know` = gate; `good-to-know` = reveal + `[gap]`. Untiered: basics → `must-know`, internals → `good-to-know`.
 
+**Primer (zero-knowledge path).** If the student is new to the target — they declare no/low knowledge, or ask to learn before being quizzed — write a one-page `study/primer.md` before Phase 1: each must-know objective restated as a short readable explanation, anchored to the target material with a citation in the ledger's per-medium format (skill: doc pointer; code: rule/`file:line`; document: §/page; timed media: timestamp range), ending with what to read next. If newness only surfaces at a failed Phase-1 item, upgrade that item's weak-area summary into the primer. The primer is teaching material — the quiz still grades against the target's docs, never the primer.
+
 **Ledger setup.** Before analysis, create `study/` in assignment directory, fallback `./study-ledger-<skill>-<YYYY-MM-DD>.md`. Write header per `references/ledger-format.md`.
 
 ## Phase 1 — Pre-flight quiz
@@ -69,7 +71,7 @@ Ask 5–8 questions on must-know basics: input formats on disk, tool purpose, 1�
 
 Grade against target skill docs. Accept informal but substantively correct answers. Log each verbatim answer as `[student-verbatim]` and grade as `[tutor]`.
 
-Threshold: ≥70% must-know to proceed. If below: summarize weak areas in ≤5 bullets, point to target skill README or specific doc file, and re-ask a fresh variant of each failed item. Repeat at most twice, then log remaining gaps with `[reveal]` and proceed.
+Threshold: ≥70% must-know to proceed. If below: summarize weak areas in ≤5 bullets (issue or extend `study/primer.md` if the student has no reading material yet), point to target skill README or specific doc file, and re-ask a fresh variant of each failed item. Repeat at most twice, then log remaining gaps with `[reveal]` and proceed.
 
 ## Phase 2 — Socratic run
 
