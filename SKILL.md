@@ -1,7 +1,7 @@
 ---
 name: lf-skill
 description: 'Use when a student should learn rather than just run: wraps a target agentic skill (e.g., bioinformatics pipelines) in a Socratic workflow. The agent executes, but the student must demonstrate understanding via checkpoints, quizzes, and teach-backs before progress continues.'
-version: 1.3.0
+version: 1.5.0
 updated: "2026-11-21"
 triggers:
   - "lf-skill"
@@ -22,6 +22,8 @@ triggers:
 skills:
   - "skill-forge"
   - "youtube-extract"
+  - "design-pack"
+  - "genoffice"
 disable-model-invocation: true
 requires:
   - "stdlib only; no external dependencies"
@@ -61,7 +63,7 @@ When an agentic skill completes an assignment end-to-end, the agent absorbs the 
 
 **Tier:** `must-know` = gate; `good-to-know` = reveal + `[gap]`. Untiered: basics → `must-know`, internals → `good-to-know`.
 
-**Primer (zero-knowledge path).** If the student is new to the target — they declare no/low knowledge, or ask to learn before being quizzed — write a one-page `study/primer.md` before Phase 1: each must-know objective restated as a short readable explanation, anchored to the target material with a citation in the ledger's per-medium format (skill: doc pointer; code: rule/`file:line`; document: §/page; timed media: timestamp range), ending with what to read next. If newness only surfaces at a failed Phase-1 item, upgrade that item's weak-area summary into the primer. The primer is teaching material — the quiz still grades against the target's docs, never the primer. Sizing (map + depth files), media (diagrams, runnable blocks, timestamp pointers) and the concept-vs-technique strategy per objective follow `references/primer.md`; tag every must-know objective `concept` or `technique` there.
+**Primer (zero-knowledge path).** If the student is new to the target — they declare no/low knowledge, or ask to learn before being quizzed — build a slide-deck primer before Phase 1: a small map deck (must-know objectives, reading path, one orientation slide each) plus per-objective depth decks, every slide anchored to the target material with a citation in the ledger's per-medium format (skill: doc pointer; code: rule/`file:line`; document: §/page; timed media: timestamp range). If newness only surfaces at a failed Phase-1 item, upgrade that item's weak-area summary into a depth deck. The primer is teaching material — the quiz still grades against the target's docs, never the primer. Rendering (design-pack HTML decks, genoffice `.pptx` on request, markdown fallback), sizing, slide discipline and the concept-vs-technique strategy per objective follow `references/primer.md`; tag every must-know objective `concept` or `technique` there.
 
 **Ledger setup.** Before analysis, create `study/` in assignment directory, fallback `./study-ledger-<skill>-<YYYY-MM-DD>.md`. Write header per `references/ledger-format.md`.
 

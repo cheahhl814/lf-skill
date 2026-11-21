@@ -15,11 +15,11 @@ learning report).
 **Repository**: https://github.com/cheahhl814/lf-skill
 
 > [!NOTE]
-> Current version: **v1.4.0** (updated 2026-11-21). v1.4.0 makes the primer
-> expandable (map + per-objective depth sections) and strategy-aware (concepts
-> vs. techniques). v1.3.0 added the zero-knowledge primer path; v1.2.0 added
-> per-medium adapters so the same Socratic loop works on pipelines/scripts,
-> documents and timed media, not just skills.
+> Current version: **v1.5.0** (updated 2026-11-21). v1.5.0 renders the primer as
+> slide decks (design-pack HTML/SVG, genoffice `.pptx` on request). Earlier:
+> v1.4.0 made the primer expandable and strategy-aware (concepts vs. techniques);
+> v1.3.0 added the zero-knowledge primer path; v1.2.0 added per-medium adapters so
+> the same Socratic loop works on pipelines/scripts, documents and timed media.
 
 ## Contents
 
@@ -78,9 +78,8 @@ lf-skill: study mode for the RNA-seq lecture video
    loads the matching medium adapter (for code, documents or timed media) and the
    optional `teaching/objectives.md` (instructor-annotated; else it derives
    must-know/good-to-know objectives from the target docs). For first-time students
-   it issues an expandable, cited primer (`study/primer.md` + per-objective depth
-   sections; concepts read, techniques run) so there is reading material before the
-   quiz.
+   it builds a slide-deck primer (map deck + per-objective depth decks, rendered via
+   design-pack / genoffice) so there is learning material before the quiz.
 2. **Phase 1 — Pre-flight quiz.** ≥ 70% of must-know basics before analysis starts.
 3. **Phase 2 — Socratic run.** Checkpoints at stage boundaries, consequential commands,
    and real parameter choices. Escape: "study off" — flagged, never argued with.
@@ -125,7 +124,7 @@ lf-skill/
     │   ├── code.md                 # Adapter: Nextflow, Snakemake, shell scripts
     │   ├── document.md             # Adapter: papers, protocols, SOPs, specs, manuals
     │   └── timed-media.md          # Adapter: videos, podcasts (timestamped transcript)
-    ├── primer.md                   # Primer contract: sizing, media, concept/technique split
+    ├── primer.md                   # Primer contract: deck rendering, sizing, concept/technique split
     └── objectives-contract.md      # Instructor annotation formats + derivation fallback
 ```
 
@@ -152,6 +151,11 @@ validated by `skill-lint.py` C12; runtime prerequisites live in the separate
   rendered from its template.
 - **youtube-extract** — external intake skill for the video medium: produces the
   timestamped transcript that `references/media/timed-media.md` requires.
+- **design-pack** — external rendering skill for the zero-knowledge primer: renders
+  the map and depth decks as self-contained HTML with SVG diagrams
+  (`references/primer.md`).
+- **genoffice** — external rendering skill, on request: produces a `.pptx` version
+  of the primer decks when a portable, instructor-editable file is wanted.
 
 At runtime it composes with whichever agentic skill the assignment uses (it reads that
 skill's `SKILL.md` and optional `teaching/objectives.md`); no sibling skill is a hard
