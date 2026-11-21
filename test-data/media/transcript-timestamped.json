@@ -1,0 +1,17 @@
+{
+  "video_id": "fixture-0001",
+  "url": "file://fixture/toy-fastq-talk",
+  "language": "en",
+  "transcript_type": "manual",
+  "extraction_backend": "fixture",
+  "num_snippets": 5,
+  "total_duration_seconds": 95.0,
+  "word_count": 74,
+  "snippets": [
+    {"start": 4.0,  "duration": 6.0, "text": "A FASTQ record is four lines: id, sequence, a plus line, and the quality line."},
+    {"start": 20.0, "duration": 6.0, "text": "The quality line encodes one Phred score per base, one ASCII character each."},
+    {"start": 41.0, "duration": 6.0, "text": "We store the Phred score plus 33, so even a score of zero stays a visible character."},
+    {"start": 62.0, "duration": 7.0, "text": "A Phred score of 40 becomes the character I, and it means a 1 in 10,000 chance of a wrong base."},
+    {"start": 84.0, "duration": 6.0, "text": "If the quality line is not the same length as the sequence line, the file is corrupt."}
+  ]
+}

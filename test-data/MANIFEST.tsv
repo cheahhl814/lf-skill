@@ -1,0 +1,5 @@
+# sha256 of fixture files — regenerate with: python3 make_fixtures.py --write
+code/Snakefile	d70c8a938b0e1f4e33e24b884e7b54271f448110b021baf04d4d294356279490
+skill-fixture/SKILL.md	76f000100829abeaeb968dc31e62b135c2ff4c8b88996407f79bc50a88bcaf72
+document/mini-sop.md	d3eaaf2b65b769b97191601ce93d24bbaab016502c78a2850367de19c0c12af3
+media/transcript-timestamped.json	13c31e2643321fa27382b700fed04ac642801cf7efb9b572f64b0121a9f1fb07

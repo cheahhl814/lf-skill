@@ -32,3 +32,6 @@ tool-inventory.json
 # Session handoff documents (per-run, workspace-local — never ship)
 handoff.md
 handoff-archive.md
+# Battle-test canary scratch (per-run, transient — never ship)
+.battle-test-scratch/
+exec-canary-report.md
