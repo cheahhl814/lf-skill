@@ -1,6 +1,6 @@
 # lf-skill
 
-[![Version](https://img.shields.io/badge/version-1.3.0-blue)](#-installation)
+[![Version](https://img.shields.io/badge/version-1.4.0-blue)](#-installation)
 [![Type](https://img.shields.io/badge/type-agent%20skill-blueviolet)](#-installation)
 [![Built with](https://img.shields.io/badge/built%20with-skill--forge-orange)](https://github.com/cheahhl814/skill-forge)
 
@@ -15,9 +15,11 @@ learning report).
 **Repository**: https://github.com/cheahhl814/lf-skill
 
 > [!NOTE]
-> Current version: **v1.3.0** (updated 2026-11-21). v1.3.0 adds the zero-knowledge
-> primer path; v1.2.0 added per-medium adapters so the same Socratic loop works on
-> pipelines/scripts, documents and timed media, not just skills.
+> Current version: **v1.4.0** (updated 2026-11-21). v1.4.0 makes the primer
+> expandable (map + per-objective depth sections) and strategy-aware (concepts
+> vs. techniques). v1.3.0 added the zero-knowledge primer path; v1.2.0 added
+> per-medium adapters so the same Socratic loop works on pipelines/scripts,
+> documents and timed media, not just skills.
 
 ## Contents
 
@@ -76,8 +78,9 @@ lf-skill: study mode for the RNA-seq lecture video
    loads the matching medium adapter (for code, documents or timed media) and the
    optional `teaching/objectives.md` (instructor-annotated; else it derives
    must-know/good-to-know objectives from the target docs). For first-time students
-   it issues a one-page cited primer (`study/primer.md`) so there is reading material
-   before the quiz.
+   it issues an expandable, cited primer (`study/primer.md` + per-objective depth
+   sections; concepts read, techniques run) so there is reading material before the
+   quiz.
 2. **Phase 1 — Pre-flight quiz.** ≥ 70% of must-know basics before analysis starts.
 3. **Phase 2 — Socratic run.** Checkpoints at stage boundaries, consequential commands,
    and real parameter choices. Escape: "study off" — flagged, never argued with.
@@ -122,6 +125,7 @@ lf-skill/
     │   ├── code.md                 # Adapter: Nextflow, Snakemake, shell scripts
     │   ├── document.md             # Adapter: papers, protocols, SOPs, specs, manuals
     │   └── timed-media.md          # Adapter: videos, podcasts (timestamped transcript)
+    ├── primer.md                   # Primer contract: sizing, media, concept/technique split
     └── objectives-contract.md      # Instructor annotation formats + derivation fallback
 ```
 

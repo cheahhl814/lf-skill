@@ -14,7 +14,7 @@ verbatim (rule 1 of SKILL.md).
 - course/module: <from study-config.md, else unstated>
 - run directory: <absolute path>
 - mode: study | escaped (set at session end from escape flags)
-- artifacts: quiz.md, defense-pack.md, report.html (primer.md if issued)
+- artifacts: quiz.md, defense-pack.md, report.html (primer.md + study/primer/* depth sections if issued)
 ```
 
 ## Entry grammar
