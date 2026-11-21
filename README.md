@@ -152,6 +152,7 @@ validated by `skill-lint.py` C12; runtime prerequisites live in the separate
   Source: [cheahhl814/skill-forge](https://github.com/cheahhl814/skill-forge).
 - **youtube-extract** — external intake skill for the video medium: produces the
   timestamped transcript that `references/media/timed-media.md` requires.
+  Source: [cheahhl814/youtube-extract](https://github.com/cheahhl814/youtube-extract).
 - **design-pack** — external rendering skill for the zero-knowledge primer: renders
   the map and depth decks as self-contained HTML with SVG diagrams
   (`references/primer.md`).
