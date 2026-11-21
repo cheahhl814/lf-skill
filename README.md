@@ -149,6 +149,7 @@ validated by `skill-lint.py` C12; runtime prerequisites live in the separate
 - **skill-forge** — the structural contract lf-skill ships under: frontmatter
   conventions, `bin/skill-lint.py` gate, and the `bin/skill-update-check.py` script
   rendered from its template.
+  Source: [cheahhl814/skill-forge](https://github.com/cheahhl814/skill-forge).
 - **youtube-extract** — external intake skill for the video medium: produces the
   timestamped transcript that `references/media/timed-media.md` requires.
 - **design-pack** — external rendering skill for the zero-knowledge primer: renders
@@ -156,6 +157,14 @@ validated by `skill-lint.py` C12; runtime prerequisites live in the separate
   (`references/primer.md`).
 - **genoffice** — external rendering skill, on request: produces a `.pptx` version
   of the primer decks when a portable, instructor-editable file is wanted.
+  Source: [genspark-ai/genoffice](https://github.com/genspark-ai/genoffice) — the
+  skill itself lives nested at
+  [`skills/genoffice/`](https://github.com/genspark-ai/genoffice/tree/main/skills/genoffice)
+  in that repo; install that subdirectory (clone/symlink it), not the repo root.
+
+External skills are declared by name in the frontmatter `skills:` field and must
+resolve in the agent's skills directory at lint time (C12); install each from its
+source above if missing.
 
 At runtime it composes with whichever agentic skill the assignment uses (it reads that
 skill's `SKILL.md` and optional `teaching/objectives.md`); no sibling skill is a hard
